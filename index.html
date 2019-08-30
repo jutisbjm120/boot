@@ -6,6 +6,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.css" rel="stylesheet">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <style>
+    .container-fluid{
+      min-width: 600px;
+    }
     .navbar{
       min-height: 100px;
       line-height: 100px;
@@ -51,26 +54,52 @@
       /* height: 100%; */
       width: 100%;
     }
+    .pop{
+      position: absolute;
+      top: 68%;
+      transform: translateX(-30%);
+    }
+    
+    .pop  span{
+      color: #f00;
+      background-color: #fff;
+      padding: 3px;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: .3em;
+      display: inline-block;
+      height: 100%;
+      line-height: 100%;
+    }
     @media screen and (max-width:766px){
       .pull-right{
         width: 100%;
+      }
+      .pop{
+        left: 58%;
       }
       .navbar-nav>li:last-of-type>a{
       padding-right: 15px;
       }
     }
-    .pop{
-      position: absolute;
-      left: 46%;
-      top: 68%;
+    @media screen and (min-width:765px) and (max-width:1200px){
+      .pop span{
+        line-height: 20px;       
+      }
+      .pop{
+        left: 59%;
+      }
     }
-    .pop .row div{
-      width: calc(50% - 20px);
-      margin: 0 10px;
+    @media screen and (min-width:1199px){
+      .pop span{
+        padding: 10px 8px; 
+        height: 26px;
+      }
+      .pop{
+        left: 59%;
+      }
     }
-    .pop .row div button{
-      color: #f00;
-    }
+    
   </style>
   <title>Document</title>
 </head>
@@ -119,15 +148,20 @@
                 </div>
               </div>
           </div>
-          <div class="col-sm-4 pop">
-            <div class="row">
-              <div class="pull-left"><button class="btn-sm btn btn-block btn-default">立刻咨询</button></div>
-              <div class="pull-right"><button class="btn-sm btn btn-default btn-block">详情请咨询门店</button></div>
+          <div class="pop">
+                 <span class="full-right">立刻咨询</span>
+                  <span class="full-left">详情请咨询门店</span>
             </div>
             
             
           </div>
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+  window.onresize=function(){
+
+  }
+
+</script>
 </body>
 </html>
